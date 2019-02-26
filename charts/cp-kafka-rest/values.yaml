@@ -83,5 +83,8 @@ cp-zookeeper:
 
 ## If the Kafka Chart is disabled a URL and port are required to connect
 ## e.g. gnoble-panther-cp-schema-registry:8081
-cp-schema-registry:
+cp_schema_registry:
   url: ""
+
+cp_kafka_bootstrap_server:
+  url:
