@@ -70,9 +70,9 @@ spec:
               fieldRef:
                 fieldPath: status.podIP
           - name: KAFKA_REST_BOOTSTRAP_SERVERS
-            value: {{ .Values.cp_kafka_bootstrap_server.url }}
+            value: {{ .Values.kafka.bootstrapServers }}
           - name: KAFKA_REST_SCHEMA_REGISTRY_URL
-            value: {{ .Values.cp_schema_registry.url }}
+            value: {{ .Values.cp-schema-registry.url }}
           - name: KAFKAREST_HEAP_OPTS
             value: "{{ .Values.heapOptions }}"
           {{- range $key, $value := .Values.configurationOverrides }}
