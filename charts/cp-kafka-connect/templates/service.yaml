@@ -14,7 +14,7 @@ spec:
     {{- if .Values.prometheus.jmx.enabled }}
     - name: metrics
       port: {{ .Values.jmx.port }}
-    {{ end -}}
+    {{- end }}
   selector:
     app: {{ template "cp-kafka-connect.name" . }}
     release: {{ .Release.Name }}
