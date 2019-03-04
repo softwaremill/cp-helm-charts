@@ -83,6 +83,8 @@ prometheus:
     ## Resources configuration for the JMX exporter container.
     ## See the `resources` documentation above for details.
     resources: {}
+  serviceMonitor:
+    enabled: true
 
 ## You can list load balanced service endpoint, or list of all brokers (which is hard in K8s).  e.g.:
 ## bootstrapServers: "PLAINTEXT://dozing-prawn-kafka-headless:9092"
