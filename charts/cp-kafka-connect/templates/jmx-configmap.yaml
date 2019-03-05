@@ -29,4 +29,5 @@ data:
         connector: $1
         task: $2
         status: $3
+    {{- end }}
 {{- end }}
