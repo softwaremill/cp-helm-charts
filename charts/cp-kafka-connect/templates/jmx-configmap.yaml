@@ -15,6 +15,9 @@ data:
     lowercaseOutputLabelNames: true
     ssl: false
     rules:
+    {{- if .Values.prometheus.jmx.customRules }}
+    {{ toYaml .Values.prometheus.jmx.customRules }}
+    {{- else }}
     - pattern : "kafka.connect<type=connect-worker-metrics>([^:]+):"
       name: "cp_kafka_connect_connect_worker_metrics_$1"
     - pattern : "kafka.connect<type=connect-metrics, client-id=([^:]+)><>([^:]+)"
