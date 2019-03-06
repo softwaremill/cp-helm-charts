@@ -62,6 +62,18 @@ spec:
             - containerPort: {{ .Values.jmx.port }}
               name: jmx
             {{- end }}
+          readinessProbe:
+            httpGet:
+              port: {{ .Values.servicePort }}
+              path: /
+            periodSeconds: 10
+            initialDelaySeconds: 30
+          livenessProbe:
+            httpGet:
+              port: {{ .Values.servicePort }}
+              path: /
+            periodSeconds: 30
+            initialDelaySeconds: 60
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
