@@ -59,7 +59,7 @@ spec:
               port: {{ .Values.servicePort }}
               path: /
             periodSeconds: 10
-            initialDelaySeconds: 30
+            initialDelaySeconds: 60
           livenessProbe:
             httpGet:
               port: {{ .Values.servicePort }}
