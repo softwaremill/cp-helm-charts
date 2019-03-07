@@ -63,6 +63,8 @@ nodeSelector: {}
 ## Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations: {}
 
+affinity: {}
+
 ## Monitoring
 ## Kafka Connect JMX Settings
 ## ref: https://kafka.apache.org/documentation/#connect_monitoring
