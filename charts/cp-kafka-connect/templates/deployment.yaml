@@ -60,6 +60,7 @@ spec:
               path: /
             periodSeconds: 10
             initialDelaySeconds: 60
+            failureThreshold: 10
           ports:
             - name: kafka-connect
               containerPort: {{ .Values.servicePort}}
