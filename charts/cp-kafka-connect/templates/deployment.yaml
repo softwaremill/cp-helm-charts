@@ -61,6 +61,7 @@ spec:
             periodSeconds: 10
             initialDelaySeconds: 60
             failureThreshold: 10
+            timeoutSeconds: 5
           ports:
             - name: kafka-connect
               containerPort: {{ .Values.servicePort}}
