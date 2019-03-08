@@ -60,12 +60,6 @@ spec:
               path: /
             periodSeconds: 10
             initialDelaySeconds: 60
-          livenessProbe:
-            httpGet:
-              port: {{ .Values.servicePort }}
-              path: /
-            periodSeconds: 30
-            initialDelaySeconds: 60
           ports:
             - name: kafka-connect
               containerPort: {{ .Values.servicePort}}
