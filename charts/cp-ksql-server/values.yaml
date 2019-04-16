@@ -67,6 +67,12 @@ prometheus:
     ## See the `resources` documentation above for details.
     resources: {}
 
+ksqlCli:
+  enabled: false
+  image: confluentinc/cp-ksql-cli
+  imageTag: 5.1.2
+  resources: {}
+
 ## External Access
 ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
 external:

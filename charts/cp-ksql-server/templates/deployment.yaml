@@ -51,6 +51,12 @@ spec:
           - name: jmx-config
             mountPath: /etc/jmx-ksql-server
         {{- end }}
+        {{- if .Values.ksqlCli.enabled }}
+        - name: ksql-cli
+          image: "{{ .Values.ksqlCli.image }}:{{ .Values.ksqlCli.imageTag }}"
+          resources:
+{{ toYaml .Values.prometheus.jmx.resources | indent 12 }}
+        {{- end }}
         - name: {{ template "cp-ksql-server.name" . }}
           image: "{{ .Values.image }}:{{ .Values.imageTag }}"
           imagePullPolicy: "{{ .Values.imagePullPolicy }}"
