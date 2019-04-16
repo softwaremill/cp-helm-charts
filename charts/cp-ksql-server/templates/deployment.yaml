@@ -54,6 +54,7 @@ spec:
         {{- if .Values.ksqlCli.enabled }}
         - name: ksql-cli
           image: "{{ .Values.ksqlCli.image }}:{{ .Values.ksqlCli.imageTag }}"
+          tty: true
           resources:
 {{ toYaml .Values.prometheus.jmx.resources | indent 12 }}
         {{- end }}
